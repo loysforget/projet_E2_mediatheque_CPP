@@ -1,15 +1,22 @@
+#ifndef MEDIATHEQUE_H 
+#define MEDIATHEQUE_H 
 #include <iostream>
 #include <cstdio>
 #include <assert.h>
 #include <string>
 #include <fstream>
 #include <sstream>
-#ifndef MEDIATHEQUE_H 
-#define MEDIATHEQUE_H 
+#include <vector>
+#include "media.hpp"
+
+using namespace std;
 
 class Mediatheque{
+    protected :
     //Attributs
-    
+    vector<Media*> alldata;
+
+    public:
     //Methodes
     void bye();
     bool add();

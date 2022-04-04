@@ -1,26 +1,25 @@
-#ifndef MEDIA_H 
-#define MEDIA_H 
+#ifndef VHS_H 
+#define VHS_H
 #include <iostream>
 #include <cstdio>
 #include <assert.h>
 #include <string>
 #include <fstream>
 #include <sstream>
+#include "media.hpp"
 
 using namespace std;
 
-class Media{
+class VHS : public Media {
     //Attributs
 
     protected :
-    string titre;
-    string auteur;
-    string date_de_publi;
-    int ID;
-
+    int duree;
+    string maison_de_prod;
+    
     //Methodes
     
-    virtual bool add()=0;
+    virtual bool add(int media_type)=0;
     void load();
     void save();
     void clear();

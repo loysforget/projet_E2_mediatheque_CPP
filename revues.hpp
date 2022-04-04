@@ -1,26 +1,23 @@
-#ifndef MEDIA_H 
-#define MEDIA_H 
+#ifndef REVUES_H 
+#define REVUES_H 
 #include <iostream>
 #include <cstdio>
 #include <assert.h>
 #include <string>
 #include <fstream>
 #include <sstream>
+#include "livre.hpp"
 
 using namespace std;
 
-class Media{
-    //Attributs
-
-    protected :
-    string titre;
-    string auteur;
-    string date_de_publi;
-    int ID;
+class Revues : public Livre {
+  protected :
+    string editeur;
+    int nb_articles;
 
     //Methodes
     
-    virtual bool add()=0;
+    virtual bool add(int media_type)=0;
     void load();
     void save();
     void clear();

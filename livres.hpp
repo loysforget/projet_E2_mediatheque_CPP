@@ -1,6 +1,7 @@
-#ifndef MEDIA_H 
-#define MEDIA_H 
+#ifndef LIVRE_H 
+#define LIVRE_H 
 #include <iostream>
+#include "media.hpp"
 #include <cstdio>
 #include <assert.h>
 #include <string>
@@ -9,18 +10,13 @@
 
 using namespace std;
 
-class Media{
+class Livre : public Media{
     //Attributs
-
-    protected :
-    string titre;
-    string auteur;
-    string date_de_publi;
-    int ID;
-
+    
+    
     //Methodes
     
-    virtual bool add()=0;
+    virtual bool add(int media_type)=0;
     void load();
     void save();
     void clear();

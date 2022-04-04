@@ -1,4 +1,6 @@
 #include "mediatheque.hpp"
+#include "livre.hpp"
+
 using namespace std;
 bool Mediatheque::add(){
     string buffer;
@@ -8,6 +10,9 @@ bool Mediatheque::add(){
         cin >> buffer;
         if ((buffer == "Livre") or (buffer == "livre")){
             // Appel fonction add
+            Livre *new_livre = new Livre;
+            new_livre -> add();
+            
             return true;
         }
 
