@@ -6,7 +6,7 @@
 #include <sstream>
 
 using namespace std;
-
+/*
 class Media{
     protected :
     string titre;
@@ -158,6 +158,8 @@ getline( cin, URL);
 
 int main(int argc, char const *argv[])
 {
-    /* code */
+    
     return 0;
 }
+
+*/

@@ -19,7 +19,7 @@ class Livre : public Media{
     string resume;
     
     //Methodes
-    
+    public:
     bool add();
     void load();
     void save();
@@ -27,11 +27,6 @@ class Livre : public Media{
     void search();
     void show_id();
     void delete_id();
-    void reset_all();
-    void list();
-};
-
-#endifid delete_id();
     void reset_all();
     void list();
 };

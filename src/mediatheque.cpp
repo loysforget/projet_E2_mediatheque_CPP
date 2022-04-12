@@ -1,6 +1,9 @@
 #include "mediatheque.hpp"
 #include "livre.hpp"
 
+
+
+
 using namespace std;
 bool Mediatheque::add(){
     string buffer;

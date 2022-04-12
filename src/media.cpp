@@ -13,4 +13,6 @@ bool Media::add(){
 
     cout << "Entrez l'ID : " << endl;
     cin >> ID;
+    return true;
 }
+

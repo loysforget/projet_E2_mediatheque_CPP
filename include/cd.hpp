@@ -21,7 +21,7 @@ class CD : public Media {
     
     //Methodes
     
-    virtual bool add(int media_type) = 0;
+    virtual bool add() = 0;
     void load();
     void save();
     void clear();
