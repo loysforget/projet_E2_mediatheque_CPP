@@ -24,11 +24,12 @@ int funcsearch(Mediatheque* ma_mediatheque){
         while(true){
             cout << endl << "=----- LISTE DES MÉDIAS -----=" << endl << endl;
             ma_mediatheque->listAll("searchvector");
-            cout << endl << "=-----------------------------------------=" << endl;
-            cout << "------ AFFINER LA RECHERCHE (search) ------" << endl;
-            cout << "------ SELECTIONNER UN MEDIA (select) -----" << endl;
-            cout << "---- QUITTER LE MODE RECHERCHE (clear) ----" << endl;
-            cout << "=-----------------------------------------=" << endl << endl;
+            cout << endl << "=----------------------------------------------=" << endl;
+            cout << "-------- AFFINER LA RECHERCHE (search) ---------" << endl;
+            cout << "--------- SELECTIONNER UN MEDIA (select) -------" << endl;
+            cout << "------- QUITTER LE MODE RECHERCHE (clear) ------" << endl;
+            cout << "---- LISTER LES ÉLÉMENTES RECHERCHÉS (LIST) ----" << endl;
+            cout << "=----------------------------------------------=" << endl << endl;
             while(true){
                 cout << "SEARCH COMMANDE : ";
                 getline(cin, commande);
@@ -55,7 +56,10 @@ int funcsearch(Mediatheque* ma_mediatheque){
                     }
                     break;
                 }
-                else if(findCaseInsensitive("clear", commande) != string::npos){
+                else if(findCaseInsensitive("list", commande) != string::npos){
+                    ma_mediatheque->listAll("searchvector");
+                }
+                else if(findCaseInsensitive("clear quit", commande) != string::npos){
                     ma_mediatheque->clear();
                     return 0;
                     
@@ -91,7 +95,10 @@ int run(){
             while(true){
                 cout << "ADD COMMANDE : ";
                 getline(cin, buffer_option);
-                if(ma_mediatheque->add(buffer_option)){
+                if(findCaseInsensitive("quit", buffer_option) != string::npos){
+                    break;
+                }
+                else if(ma_mediatheque->add(buffer_option)){
                     break;
                 }
             }

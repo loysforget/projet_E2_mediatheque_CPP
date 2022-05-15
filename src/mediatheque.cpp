@@ -6,10 +6,6 @@
 #include "dvd.hpp"
 #include "numerique.hpp"
 
-
-
-
-
 using namespace std;
 
 size_t Mediatheque::findCaseInsensitive(std::string data, std::string toSearch, size_t pos = 0)
@@ -208,7 +204,7 @@ void Mediatheque::load(string _vector, string _filename){
                     searchvector.push_back(_livre_);
                 }
             }
-            else if(null.substr(0,1) == "L"){
+            else if(null.substr(0,1) == "R"){
                 Revue* _revue_ = new Revue();
                 _revue_->load(null);
                 if(_vector.find("alldata") != string::npos){
@@ -313,10 +309,6 @@ bool Mediatheque::select_action(string _vecteur, int _num_media){
     return false;
 }
 
-void Mediatheque::show(int _ID){
-
-}
-
 void Mediatheque::clear(){
     searchvector.clear();
     std::ofstream ofs;
@@ -383,8 +375,4 @@ bool Mediatheque::search(string _vector, string _searching){
         return false;
     }
     _inStreamSearch.close();
-}
-
-vector<Media*> Mediatheque::getAlldata(){
-    return alldata;
 }

@@ -57,37 +57,9 @@ Media::~Media(){
 
 /* Méthodes pour définir et recupérer les informations d'un média */
 
-void Media::defAuteur(string _auteur){
-    auteur = _auteur;
-}
-
-void Media::defTitre(string _titre){
-    titre = _titre;
-}
 
 void Media::defType(string _type){
     type = _type;
-}
-
-void Media::defDate_de_publi(string _date_de_publi){
-    date_de_publi = _date_de_publi;
-}
-
-
-string Media::getAuteur(){
-    return auteur;
-}
-
-string Media::getTitre(){
-    return titre;
-}
-
-string Media::getDate_de_publi(){
-    return date_de_publi;
-}
-
-string Media::getDispo(){
-    return dispo;
 }
 
 int Media::getID(){

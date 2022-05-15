@@ -31,16 +31,7 @@ class Media{
         virtual ~Media();
         
         void defType(string _type);
-        void defTitre(string _titre);
-        void defAuteur(string _auteur);
-        void defDate_de_publi(string _date_de_publi);
-        void defStatID(int _id);
 
-        string getType();
-        string getTitre();
-        string getAuteur();
-        string getDate_de_publi();
-        string getDispo();
         int getID();
 
         void emprunter();
