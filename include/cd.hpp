@@ -1,35 +1,37 @@
 #ifndef CD_H 
 #define CD_H 
 #include <iostream>
+#include "media.hpp"
 #include <cstdio>
 #include <assert.h>
 #include <string>
 #include <fstream>
 #include <sstream>
-#include "media.hpp"
 
 using namespace std;
 
-class CD : public Media {
+class Cd : public Media{
     //Attributs
 
     protected :
-    int duree;
-    int nb_piste;
-    string maison_de_prod;
-
+    string duree;
+    string nb_piste;
+    string maison_prod;
     
     //Methodes
-    
-    virtual bool add() = 0;
-    void load();
-    void save();
-    void clear();
-    void search();
-    void show_id();
-    void delete_id();
-    void reset_all();
-    void list();
+    public:
+
+    Cd();
+    Cd(string null, int _id);
+    Cd(ifstream& _stream, string _data, int _id);                                                                        
+    ~Cd();
+
+
+    void load(string _data);
+    void save(ofstream& _stream);
+    void show();
+
+
 };
 
 #endif

@@ -1,7 +1,7 @@
-#ifndef LIVRE_H 
-#define LIVRE_H 
+#ifndef Revue_H 
+#define Revue_H 
 #include <iostream>
-#include "media.hpp"
+#include "livre.hpp"
 #include <cstdio>
 #include <assert.h>
 #include <string>
@@ -10,21 +10,20 @@
 
 using namespace std;
 
-class Livre : public Media{
+class Revue : public Livre{
     //Attributs
 
     protected :
-    int nb_pages;
-    string collection;
-    string resume;
+    string editeur;
+    string nb_article;
     
     //Methodes
     public:
 
-    Livre();  
-    Livre(string null, int _id); 
-    Livre(ifstream& _stream, string _data, int _id);                                                                    
-    ~Livre();  
+    Revue();  
+    Revue(string null, int _id); 
+    Revue(ifstream& _stream, string _data, int _id);                                                                    
+    ~Revue();  
 
     /*
     virtual void defNb_pages(int _nb_pages);
@@ -37,9 +36,9 @@ class Livre : public Media{
     */
 
 
-    virtual void load(string _data);
-    virtual void save(ofstream& _stream);
-    virtual void show();
+    void load(string _data);
+    void save(ofstream& _stream);
+    void show();
 
 
 };

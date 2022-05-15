@@ -1,0 +1,11 @@
+=----- SAUVEGARDE DE LA MÉDIATHÈQUE -----=
+Livre#0#Une brève histoire du temps#Stephen Hawking#1988#Oui#236#-vide-#Explication sur le fonctionnement de l'univers#
+Livre#1#Les Fleurs du mal#Charles Baudelaire#21 juin 1857#Oui#288#-vide-#Des poèmes très connus!#
+Livre#2#Le Petit Prince#Antoine de Saint-Exupéry#1943#Oui#93#e-#Ça représentait un serpent boa qui avalait un fauve.#
+Livre#3#La petite sirenne#disney#1988#Oui#211#disney#ptit resume sirenne#
+Livre#4#Be you!#Helen Exley#2019#Oui#100#Be series#-vide-#
+Dvd#5#Avenger#Joss Whedon#2010#Oui#1h30#Marvel#1#
+Vhs#7#Bob l'éponge#-vide-#2003#Oui#2h33#Nickelodeon#
+Cd#8#Mon paradis#Christophe Maé#2007#Oui#12#-vide-##
+Numerique#9#La solitude#Kurzgesagt#2019#Oui#Vidéo Youtube#-vide-#https://youtu.be/n3Xv_g3g-mA#
+Livre#10#Le complot contre l'amerique#Philip Roth#2006#Oui#557#-vide-#resume#

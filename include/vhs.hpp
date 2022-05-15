@@ -1,33 +1,36 @@
 #ifndef VHS_H 
-#define VHS_H
+#define VHS_H 
 #include <iostream>
+#include "media.hpp"
 #include <cstdio>
 #include <assert.h>
 #include <string>
 #include <fstream>
 #include <sstream>
-#include "media.hpp"
 
 using namespace std;
 
-class VHS : public Media {
+class Vhs : public Media{
     //Attributs
 
     protected :
-    int duree;
-    string maison_de_prod;
+    string duree;
+    string maison_prod;
     
     //Methodes
-    
-    virtual bool add(int media_type)=0;
-    void load();
-    void save();
-    void clear();
-    void search();
-    void show_id();
-    void delete_id();
-    void reset_all();
-    void list();
+    public:
+
+    Vhs();
+    Vhs(string null, int _id);
+    Vhs(ifstream& _stream, string _data, int _id);                                                                        
+    ~Vhs();
+
+
+    virtual void load(string _data);
+    virtual void save(ofstream& _stream);
+    virtual void show();
+
+
 };
 
 #endif

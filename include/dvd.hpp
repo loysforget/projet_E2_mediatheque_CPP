@@ -1,33 +1,35 @@
-#ifndef DVD_H 
-#define DVD_H 
+#ifndef Dvd_H 
+#define Dvd_H 
 #include <iostream>
+#include "vhs.hpp"
 #include <cstdio>
 #include <assert.h>
 #include <string>
 #include <fstream>
 #include <sstream>
-#include "vhs.hpp"
 
 using namespace std;
 
-class DVD : public VHS {
+class Dvd : public Vhs{
     //Attributs
 
     protected :
- int chapitre;
+    string chapitre;
 
     
     //Methodes
-    
-    virtual bool add(int media_type) = 0;
-    void load();
-    void save();
-    void clear();
-    void search();
-    void show_id();
-    void delete_id();
-    void reset_all();
-    void list();
+    public:
+
+    Dvd();
+    Dvd(string null, int _id);
+    Dvd(ifstream& _stream, string _data, int _id);                                                                        
+    ~Dvd();
+
+    void load(string _data);
+    void save(ofstream& _stream);
+    void show();
+
+
 };
 
 #endif

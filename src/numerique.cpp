@@ -1,19 +1,19 @@
-#include "cd.hpp"
+#include "numerique.hpp"
 //#define DEBUG
 using namespace std;
 
-/* STRUCTURE D'UN CD :
-Type#ID#Titre#Auteur#Date de publi#Dispo#Duree#Nb de piste#Maison de prod#
+/* STRUCTURE D'UN Numerique :
+Type#ID#Titre#Auteur#Date de publi#Dispo#Nature#Taille#URL#
 */
 
-Cd::Cd() : Media(){
-    duree = "";
-    nb_piste = "";
-    maison_prod = "";
-    Media::defType("Cd");
+Numerique::Numerique() : Media(){
+    nature = "";
+    taille = "";
+    url = "";
+    Media::defType("Numerique");
 }
 
-Cd::Cd(ifstream& _stream, string _data, int _id) : Media(_stream, _data, _id){
+Numerique::Numerique(ifstream& _stream, string _data, int _id) : Media(_stream, _data, _id){
     int pos = _data.find('#');
     _data.erase(0, pos+1);
     pos = _data.find('#');
@@ -25,38 +25,38 @@ Cd::Cd(ifstream& _stream, string _data, int _id) : Media(_stream, _data, _id){
     pos = _data.find('#');
     _data.erase(0, pos+1);
     pos = _data.find('#');
-    duree = _data.substr(0, pos);
+    nature = _data.substr(0, pos);
     _data.erase(0, pos+1);
     pos = _data.find('#');
-    nb_piste = _data.substr(0, pos);
+    taille = _data.substr(0, pos);
     _data.erase(0, pos+1);
     pos = _data.find('#');
-    maison_prod = _data.substr(0, pos);
-    Media::defType("Cd");
-    cout << "Ajout du CD [ID = " << getID() << " ]" << endl;
+    url = _data.substr(0, pos);
+    Media::defType("Numerique");
+    cout << "Ajout du Numerique [ID = " << getID() << " ]" << endl;
 }
 
 
-Cd::Cd(string null, int _id) : Media(null, _id){
+Numerique::Numerique(string null, int _id) : Media(null, _id){
 
     cout << "Entrez la durée : ";
-    getline(cin, duree);
+    getline(cin, nature);
 
     cout << "Entrez le nombre de pistes : ";
-    getline(cin, nb_piste);
+    getline(cin, taille);
 
     cout << "Entrez la maison de production : ";
-    getline(cin, maison_prod);
+    getline(cin, url);
 
-    Media::defType("Cd");
+    Media::defType("Numerique");
 }
 
-Cd::~Cd(){
+Numerique::~Numerique(){
     //delete &nb_pages, &collection, &resume;
 }
 
 
-void Cd::load(string _data){
+void Numerique::load(string _data){
     if (_data.size() != 0){
         Media::load(_data);
         int pos = _data.find('#');
@@ -72,27 +72,27 @@ void Cd::load(string _data){
         pos = _data.find('#');
         _data.erase(0, pos+1);
         pos = _data.find('#');
-        duree = _data.substr(0, pos);
+        nature = _data.substr(0, pos);
         _data.erase(0, pos+1);
         pos = _data.find('#');
-        nb_piste = _data.substr(0, pos);
+        taille = _data.substr(0, pos);
         _data.erase(0, pos+1);
         pos = _data.find('#');
-        maison_prod = _data.substr(0, pos);
+        url = _data.substr(0, pos);
     }
     else{
         cout << "Le fichier est vide !" << endl;
     }
 }
 
-void Cd::save(ofstream& _stream){
+void Numerique::save(ofstream& _stream){
     Media::save(_stream);
-    _stream << duree << '#' << nb_piste << '#' << maison_prod << '#';
+    _stream << nature << '#' << taille << '#' << url << '#';
 }
 
-void Cd::show(){
+void Numerique::show(){
     Media::show();
-    cout << "Durée : " << duree << endl;
-    cout << "Nombre de pistes : " << nb_piste << endl;
-    cout << "Maison de production : " << maison_prod << endl;
+    cout << "Nature : " << nature << endl;
+    cout << "Taille : " << taille << endl;
+    cout << "URL : " << url << endl;
 }
