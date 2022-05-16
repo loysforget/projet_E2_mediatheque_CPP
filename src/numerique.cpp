@@ -39,13 +39,13 @@ Numerique::Numerique(ifstream& _stream, string _data, int _id) : Media(_stream, 
 
 Numerique::Numerique(string null, int _id) : Media(null, _id){
 
-    cout << "Entrez la durée : ";
+    cout << "Entrez la nature : ";
     getline(cin, nature);
 
-    cout << "Entrez le nombre de pistes : ";
+    cout << "Entrez la taille : ";
     getline(cin, taille);
 
-    cout << "Entrez la maison de production : ";
+    cout << "Entrez l'URL : ";
     getline(cin, url);
 
     Media::defType("Numerique");

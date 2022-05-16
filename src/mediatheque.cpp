@@ -133,11 +133,36 @@ bool Mediatheque::add(string _option){
                 alldata.push_back(_livre_);
                 break;
             }
-            else if(findCaseInsensitive("cd", _type) != string::npos){
-
+            else if(findCaseInsensitive("revue", _type) != string::npos){
+                Revue* _revue_ = new Revue("Revue", alldata.size());
+                cout << "Ajout de la Revue avec l'ID = " << _revue_->getID() << endl;
+                alldata.push_back(_revue_);
                 break;
             }
-            //DEFINIR LES AUTRES TYPES !!!!!!!
+            else if(findCaseInsensitive("cd", _type) != string::npos){
+                Cd* _cd_ = new Cd("Cd", alldata.size());
+                cout << "Ajout du CD avec l'ID = " << _cd_->getID() << endl;
+                alldata.push_back(_cd_);
+                break;
+            }
+            else if(findCaseInsensitive("vhs", _type) != string::npos){
+                Vhs* _vhs_ = new Vhs("Vhs", alldata.size());
+                cout << "Ajout de la VHS avec l'ID = " << _vhs_->getID() << endl;
+                alldata.push_back(_vhs_);
+                break;
+            }
+            else if(findCaseInsensitive("dvd", _type) != string::npos){
+                Dvd* _dvd_ = new Dvd("Livre", alldata.size());
+                cout << "Ajout du DVD avec l'ID = " << _dvd_->getID() << endl;
+                alldata.push_back(_dvd_);
+                break;
+            }
+            else if(findCaseInsensitive("numerique", _type) != string::npos){
+                Numerique* _numerique_ = new Numerique("Numerique", alldata.size());
+                cout << "Ajout de la ressource numérique avec l'ID = " << _numerique_->getID() << endl;
+                alldata.push_back(_numerique_);
+                break;
+            }
             else if(findCaseInsensitive("annuler", _type) != string::npos){
                 cout << "=---- L'opération de l'ajout est annulé, retour au menu principal... ----=" << endl << endl;
                 break;
